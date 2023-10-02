@@ -25,7 +25,7 @@ En esta práctica crearemos una aplicación con PHP que funcione como calculador
 
 1. Utilizar una interfaz similar a la siguiente:
 
-![CalculadoraEj](/img/Calculadora.png)
+![CalculadoraEj](/ut2/a1/img/Calculadora.png)
 
 2. Incluir esta imagen de la calculadora que se adjunta.
 3. Incluir un fichero .css con unos estilos básicos.
