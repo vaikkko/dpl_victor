@@ -23,7 +23,10 @@ En esta práctica crearemos una aplicación con PHP que funcione como calculador
 
 #### ***Objetivos***. <a name="id2"></a>
 
-1. Utilizar una interfaz similar a la siguiente.
+1. Utilizar una interfaz similar a la siguiente:
+
+![CalculadoraEj](/img/Calculadora.png)
+
 2. Incluir esta imagen de la calculadora que se adjunta.
 3. Incluir un fichero .css con unos estilos básicos.
 4. La "calculadora nativa" debe tener como título h1 "Calculadora en entorno nativo" y la "calculadora dockerizada" debe tener como título h1 "Calculadora en entorno dockerizado".
