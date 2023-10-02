@@ -1,10 +1,10 @@
 <center>
 
-# Aplicación PHP
-
+# UT2-A1: Implantación de arquitecturas web
+## Aplicación PHP
 </center>
 
-***Nombre:***
+***Víctor Manuel Martínez López:***
 ***Curso:*** 2º de Ciclo Superior de Desarrollo de Aplicaciones Web.
 
 ### ÍNDICE
@@ -18,7 +18,7 @@
 
 #### ***Introducción***. <a name="id1"></a>
 
-Aquí explicamos brevemente la parte teórica que tiene que ver con la práctica que se va a realizar
+
 
 #### ***Objetivos***. <a name="id2"></a>
 
