@@ -18,11 +18,17 @@
 
 #### ***Introducción***. <a name="id1"></a>
 
+En esta práctica crearemos una aplicación con PHP que funcione como calculadora usando Nginx y PHP-FPM.
 
 
 #### ***Objetivos***. <a name="id2"></a>
 
-Aquí explicamos los objetivos que se pretenden alcanzar al realizar la práctica.
+1. Utilizar una interfaz similar a la siguiente.
+2. Incluir esta imagen de la calculadora que se adjunta.
+3. Incluir un fichero .css con unos estilos básicos.
+4. La "calculadora nativa" debe tener como título h1 "Calculadora en entorno nativo" y la "calculadora dockerizada" debe tener como título h1 "Calculadora en entorno dockerizado".
+5. Trabajar en una carpeta dentro del $HOME
+
 
 #### ***Material empleado***. <a name="id3"></a>
 
