@@ -45,7 +45,7 @@ _La imagen ha sido tomada después de haber creado el repositorio, de ahí el av
 
 <div align="center">
 
-![clone](clone.jpeg)
+![clone](ut1/a1/img/clone.jpeg)
 
 </div>
 
