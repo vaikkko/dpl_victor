@@ -36,7 +36,7 @@ __User 2:__ Samuel
 1. En primer lugar, Victor (user1 a partir de ahora), crea un repositorio público llamado git-work en su cuenta de GitHub, añadiendo un README.md y una licencia MIT. Este paso puede ser realizado a través de comandos mediante _git init_, pero nosotros hemos decidido inicializarlo a través de la web de Github.
 <div align="center">
 
-![create-repo](create-repository.jpeg)
+![create-repo](/ut1/a1/img/create-repository.jpeg)
 _La imagen ha sido tomada después de haber creado el repositorio, de ahí el aviso por repositorio ya existente._
 
 </div>
