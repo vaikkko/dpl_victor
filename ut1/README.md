@@ -53,7 +53,7 @@ _La imagen ha sido tomada después de haber creado el repositorio, de ahí el av
 
 <div align="center">
 
-![fork](fork.png)
+![fork](/ut1/a1/img/fork.png)
 
 </div>
 
@@ -61,7 +61,7 @@ _La imagen ha sido tomada después de haber creado el repositorio, de ahí el av
 
 <div align="center">
 
-![new-branch](new-issue.jpeg)
+![new-branch](/ut1/a1/img/new-issue.jpeg)
 
 </div>
 
@@ -69,7 +69,7 @@ _La imagen ha sido tomada después de haber creado el repositorio, de ahí el av
 
 <div align="center">
 
-![new-branch](new_branch.png)
+![new-branch](/ut1/a1/img/new_branch.png)
 
 </div>
 
@@ -77,7 +77,7 @@ _La imagen ha sido tomada después de haber creado el repositorio, de ahí el av
 
 <div align="center">
 
-![pull-request](punto9.png)
+![pull-request](/ut1/a1/img/punto9.png)
 
 </div>
 
@@ -87,7 +87,7 @@ _La imagen ha sido tomada después de haber creado el repositorio, de ahí el av
 
 <div align="center">
 
-![merge-pull-request](punto10.png)
+![merge-pull-request](/ut1/a1/img/punto10.png)
 
 </div>
 
@@ -95,7 +95,7 @@ _La imagen ha sido tomada después de haber creado el repositorio, de ahí el av
 
 <div align="center">
 
-![pull-request](punto12.png)
+![pull-request](/ut1/a1/img/punto12.png)
 
 </div>
 
@@ -113,7 +113,7 @@ _La imagen ha sido tomada después de haber creado el repositorio, de ahí el av
 
 <div align="center">
 
-![pull-request2](punto17.png)
+![pull-request2](/ut1/a1/img/punto17.png)
 
 </div>
 
@@ -121,7 +121,7 @@ _La imagen ha sido tomada después de haber creado el repositorio, de ahí el av
 
 <div align="center">
 
-![conflict](conflict.png)
+![conflict](/ut1/a1/img/conflict.png)
 
 </div>
 
@@ -129,14 +129,14 @@ En este caso, user1 optará por aceptar el cambio entrante realizado por user2 a
 
 <div align="center">
 
-![change](change.png)
+![change](/ut1/a1/img/change.png)
 
 </div>
 
 Utilizando el comando git log, observamos que se ejecuta el merge con el siguiente mensaje "PR Accepted from Samu".
 <div align="center">
 
-![git-log](19.png)
+![git-log](/ut1/a1/img/19.png)
 
 </div>
 
@@ -148,12 +148,12 @@ Utilizando el comando git log, observamos que se ejecuta el merge con el siguien
 
 <div align="center">
 
-![text-shadow](20.png)
+![text-shadow](/ut1/a1/img/20.png)
 
 </div>
 <div align="center">
 
-![commit](20.1.png)
+![commit](/ut1/a1/img/20.1.png)
 
 </div>
 
@@ -161,12 +161,12 @@ Utilizando el comando git log, observamos que se ejecuta el merge con el siguien
 
 <div align="center">
 
-![tag](21.png)
+![tag](/ut1/a1/img/21.png)
 
 </div>
 <div align="center">
 
-![tag](21.1.png)
+![tag](/ut1/a1/img/21.1.png)
 </div>
 
 #### ***Conclusiones***. <a name="id5"></a>
