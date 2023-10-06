@@ -19,7 +19,7 @@
 
 #### ***Introducción***. <a name="id1"></a>
 
-En esta práctica crearemos una aplicación con PHP que funcione como calculadora usando Nginx y PHP-FPM.
+En esta práctica crearemos una aplicación con PHP que funcione como calculadora usando Nginx con PHP-FPM y Docker.
 
 
 #### ***Objetivos***. <a name="id2"></a>
