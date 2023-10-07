@@ -57,16 +57,16 @@ Una vez realizados estos pasos, podremos empezar a preparar nuestra app.
 
     - Con los permisos necesarios modificados en la instalación previa y estos archivos creados en la carpeta, ejecutaremos en la consola el comando ' sudo nginx -t ' y comprobamos que la sintaxis del fichero de configuración está perfecta.
 
-    Ejecutamos el comando ' sudo systemctl reload nginx.service ' para que todos los archivos nuevos actualicen la carpeta root de Nginx.
+        Ejecutamos el comando ' sudo systemctl reload nginx.service ' para que todos los archivos nuevos actualicen la carpeta root de Nginx.
 
     - Por ultimo solo queda comprobar que la app funcióna correctamente y se ve en el navegador, escribimos : 
 
-    IP + (nombre de la carpeta creada) , en este caso: 
-    10.109.25.40/calculadora/ 
+         IP + (nombre de la carpeta creada) , en este caso: 
+         10.109.25.40/calculadora/ 
 
-    Y como podemos comprobar funciona tanto el código PHP con su CSS y la imagen que hemos importado del repositorio.
+          Y como podemos comprobar funciona tanto el código PHP con su CSS y la imagen que hemos importado del repositorio.
 
-    ![CapturaCalculadoraNativa](/ut2/a1/img/CapturaCalculadoraNativa.png)
+        ![CapturaCalculadoraNativa](/ut2/a1/img/CapturaCalculadoraNativa.png)
 
 > ***IMPORTANTE:*** si estamos capturando una terminal no hace falta capturar todo el escritorio y es importante que se vea el nombre de usuario.
 
