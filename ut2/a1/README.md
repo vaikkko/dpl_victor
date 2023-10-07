@@ -44,6 +44,8 @@ Una vez realizados estos pasos, podremos empezar a preparar nuestra app.
 
 #### ***Desarrollo***. <a name="id4"></a>
 
+# Nginxx + PHP-FPM Nativo.
+
 1. Primer paso: 
 
     - Crearemos una carpeta llamada 'Calculadora' en la carpeta "root" de Nginx, dentro colocaremos los archivos necesarios para la ejecución de nuestra app. 
