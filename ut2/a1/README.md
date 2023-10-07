@@ -48,7 +48,7 @@ Una vez realizados estos pasos, podremos empezar a preparar nuestra app.
 
 1. Crearemos una carpeta llamada 'Calculadora' en la carpeta "root" de Nginx, dentro colocaremos los archivos necesarios para la ejecución de nuestra app. 
 
-        ![CapturaCarpetaNginx](/ut2/a1/img/CapturaCarpetaNginx.png)
+     ![CapturaCarpetaNginx](/ut2/a1/img/CapturaCarpetaNginx.png)
 
 2. Un paso que no es 100% necesario pero puede ayudar en el proceso, es la creación de una clave SSH para conectar el servidor al repositorio Github, así tendremos un mejor acceso a los archivos, mover imagenes mas facilmente, etc.
 
@@ -65,7 +65,7 @@ Una vez realizados estos pasos, podremos empezar a preparar nuestra app.
 
           Y como podemos comprobar, funciona tanto el código PHP con su CSS y la imagen que hemos importado del repositorio.
 
-        ![CalculadoraNativaFlecha](/ut2/a1/img/CalculadoraNativaFlecha2.png)
+    ![CalculadoraNativaFlecha](/ut2/a1/img/CalculadoraNativaFlecha2.png)
 
 # Calculadora utilizando Docker.
 
