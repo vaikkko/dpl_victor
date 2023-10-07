@@ -46,9 +46,13 @@ Una vez realizados estos pasos, podremos empezar a preparar nuestra app.
 
 1. Primer paso: 
 
-    - Crearemos una carpeta llamada 'Calculadora' en la carpeta "root" de Nginx. 
+    - Crearemos una carpeta llamada 'Calculadora' en la carpeta "root" de Nginx, dentro colocaremos los archivos necesarios para la ejecución de nuestra app. 
+
+        ![CapturaCarpetaNginx](/ut2/a1/img/CapturaCarpetaNginx.png)
+
+
     - El siguiente paso será crear una clave para conectar el servidor al repositorio Github, para tener un mejor acceso a los archivos y mover imagenes mas facilmente.
-    
+
     ![CapturaRepositorioSSH](/ut2/a1/img/CapturaRepositorioSSH.png)
 
 > ***IMPORTANTE:*** si estamos capturando una terminal no hace falta capturar todo el escritorio y es importante que se vea el nombre de usuario.
