@@ -69,9 +69,36 @@ Una vez realizados estos pasos, podremos empezar a preparar nuestra app.
 
 # Calculadora utilizando Docker.
 
-1. Con Docker preinstalado, y todas las configuraciones listas tanto de Nginx como PHP-FPM configuradas correctamente, tendremos una carpeta app en la cual encontraremos ' default.conf ' , ' docker-compose.yml' y otra carpeta SRC donde tendremos nuestro archivos.
+1. Con Docker preinstalado, y todas las configuraciones listas tanto de Nginx como PHP-FPM configuradas correctamente, tendremos una carpeta app en la cual encontraremos ' default.conf ' , ' docker-compose.yml ' y otra carpeta SRC donde tendremos nuestro archivos.
+
+ -  Hacemos uso del Repositorio mediante la clave SSH, para traer los archivos de nuevo.
 
     ![CarpetaApp](/ut2/a1/img/CarpetaAppTree.png)
+
+2. A continuación cambiaremos el interior de default.conf para que contenga el archivo ' calculadora.php ' como podemos observar en la siguiente captura de pantalla.
+
+    ![Default.confFlecha](/ut2/a1/img/default.confFlecha.png)
+
+3. Cambiamos el puerto 80 a 90 en el ' docker-cmopose.yml ' ya que en clase el puerto 80 estaba en uso.
+
+    ![90-80](/ut2/a1/img/90-80.png)
+
+4. Tenemos que actualizar con ' sudo systemctl reload nginx.service ' como haciamos con la calculaora nativa.
+Despues de esto levantamos el Docker mediante el comando : 
+    
+         ' sudo docker compose up '
+
+    Y con una vez corriendo el Docker, podemos ir a nuestro navegador y añadir la IP + ':90' ( puerto que hemos cambiado ) + calculadora.php.
+    
+Quedaria:
+
+       ' 10.109.25.40:90/calculadora.php ' 
+
+Aquí podemos ver como quedaría con los comandos utilizados a su derecha:
+
+![CCDockerizado](/ut2/a1/img/CCDockerizado.png)
+
+
 
 > ***IMPORTANTE:*** si estamos capturando una terminal no hace falta capturar todo el escritorio y es importante que se vea el nombre de usuario.
 
