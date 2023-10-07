@@ -71,9 +71,11 @@ Una vez realizados estos pasos, podremos empezar a preparar nuestra app.
 
 1. Con Docker preinstalado, y todas las configuraciones listas tanto de Nginx como PHP-FPM configuradas correctamente, tendremos una carpeta app en la cual encontraremos ' default.conf ' , ' docker-compose.yml ' y otra carpeta SRC donde tendremos nuestro archivos.
 
- -  Hacemos uso del Repositorio mediante la clave SSH, para traer los archivos de nuevo.
-
     ![CarpetaApp](/ut2/a1/img/CarpetaAppTree.png)
+
+  -  Hacemos uso del Repositorio mediante la clave SSH, para traer los archivos de nuevo y mover el archivo ' .png ' 
+
+     ![pngPcture](/ut2/a1/img/pngPicture.png)
 
 2. A continuación cambiaremos el interior de default.conf para que contenga el archivo ' calculadora.php ' como podemos observar en la siguiente captura de pantalla.
 
@@ -89,7 +91,7 @@ Despues de esto levantamos el Docker mediante el comando :
          ' sudo docker compose up '
 
     Y con una vez corriendo el Docker, podemos ir a nuestro navegador y añadir la IP + ':90' ( puerto que hemos cambiado ) + calculadora.php.
-    
+
 Quedaria:
 
        ' 10.109.25.40:90/calculadora.php ' 
