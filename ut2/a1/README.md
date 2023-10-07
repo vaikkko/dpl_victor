@@ -56,11 +56,11 @@ Una vez realizados estos pasos, podremos empezar a preparar nuestra app.
 
 3. Con los permisos necesarios modificados en la instalación previa y estos archivos creados en la carpeta, ejecutaremos en la consola el comando ' sudo nginx -t ' y comprobamos que la sintaxis del fichero de configuración está perfecta.
 
-Ejecutamos el comando 
+    Ejecutamos el comando 
 
-        ' sudo systemctl reload nginx.service '
+             ' sudo systemctl reload nginx.service '
         
- para que todos los archivos nuevos actualicen la carpeta root de Nginx.
+    para que todos los archivos nuevos actualicen la carpeta root de Nginx.
 
 
 4. Por último solo queda comprobar que la app funciona correctamente, escribimos en el navegador: 
@@ -90,18 +90,23 @@ Ejecutamos el comando
 
     ![90-80](/ut2/a1/img/90-80.png)
 
-4. Tenemos que actualizar con ' sudo systemctl reload nginx.service ' como hacíamos con la calculadora nativa.
-Después de esto levantamos el Docker mediante el comando : 
+4. Tenemos que actualizar como hacíamos con la calculadora nativa mediante:
+
+        ' sudo systemctl reload nginx.service '
+        
+
+    Después de esto levantamos el Docker mediante el comando : 
     
          ' sudo docker compose up '
 
     Y con una vez corriendo el Docker, podemos ir a nuestro navegador y añadir la IP + ':90' ( puerto que hemos cambiado ) + calculadora.php.
 
-Quedaría:
+    Quedaría:
 
        ' 10.109.25.40:90/calculadora.php ' 
 
-Aquí podemos ver como quedaría con los comandos utilizados a su derecha:
+    
+    Aquí podemos ver como quedaría con los comandos utilizados a su derecha:
 
 ![CCDockerizado](/ut2/a1/img/CCDockerizado.png)
 
