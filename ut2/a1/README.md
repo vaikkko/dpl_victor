@@ -36,11 +36,20 @@ En esta práctica crearemos una aplicación con PHP que funcione como calculador
 
 #### ***Material empleado***. <a name="id3"></a>
 
-Enumeramos el material empleado tanto hardware como software y las conficuraciones que hacemos (configuraciones de red por ejemplo) 
+Para realizar esta práctica tendremos una maquina virtual que en este caso será Debian 12 como servidor, con Nginx, PHP-FPM y Docker instalados y nos conectaremos a ella mediante SSH desde un cliente.
+
+Necesitamos , tener bien instalado y configurado los programas nombrados anteriormente, cambiar la información de los archivos para establecer los permisos oportunos para cada configuración.
+
+Una vez realizados estos pasos, podremos empezar a preparar nuestra app.
 
 #### ***Desarrollo***. <a name="id4"></a>
 
-En esta parte explicamos detalladamente los pasos que seguimos para realizar la práctica incluyendo capturas de pantalla y explicando que vemos en ellas. 
+1. Primer paso: 
+
+    - Crearemos una carpeta llamada 'Calculadora' en la carpeta "root" de Nginx. 
+    - El siguiente paso será crear una clave para conectar el servidor al repositorio Github, para tener un mejor acceso a los archivos y mover imagenes mas facilmente.
+    
+    ![CapturaRepositorioSSH](/ut2/a1/img/CapturaRepositorioSSH.png)
 
 > ***IMPORTANTE:*** si estamos capturando una terminal no hace falta capturar todo el escritorio y es importante que se vea el nombre de usuario.
 
