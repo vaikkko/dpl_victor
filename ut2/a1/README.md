@@ -107,6 +107,6 @@ Aquí podemos ver como quedaría con los comandos utilizados a su derecha:
 
 #### ***Conclusiones***. <a name="id5"></a>
 
-    - A mi parecer ambas opciones son útiles, ya que la configuración nativa proporciona mayor control sobre el sistema y puede ser más eficiente, pero a su vez la opción dockerizada facilita mucho la gestión y la escalabilidad.
+- A mi parecer ambas opciones son útiles, ya que la configuración nativa proporciona mayor control sobre el sistema y puede ser más eficiente, pero a su vez la opción dockerizada facilita mucho la gestión y la escalabilidad.
 
-    Dependerá de la necesidad de cada proyecto el uso de una u otra.
+ Dependerá de la necesidad de cada proyecto el uso de una u otra.
