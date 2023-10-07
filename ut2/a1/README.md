@@ -50,7 +50,7 @@ Una vez realizados estos pasos, podremos empezar a preparar nuestra app.
 
      ![CapturaCarpetaNginx](/ut2/a1/img/CapturaCarpetaNginx.png)
 
-2. Un paso que no es 100% necesario pero puede ayudar en el proceso, es la creación de una clave SSH para conectar el servidor al repositorio Github, así tendremos un mejor acceso a los archivos, mover imagenes más fácilmente, etc.
+2. Un paso que no es 100% necesario pero puede ayudar en el proceso, es la creación de una clave SSH para conectar el servidor al repositorio Github, así tendremos un mejor acceso a los archivos, mover imágenes más fácilmente, etc.
 
     ![CapturaRepoSSH](/ut2/a1/img/CapturaRepoSSH.png)
 
@@ -63,7 +63,7 @@ Ejecutamos el comando
  para que todos los archivos nuevos actualicen la carpeta root de Nginx.
 
 
-4. Por ultimo solo queda comprobar que la app funcióna correctamente, escribimos en el navegador: 
+4. Por último solo queda comprobar que la app funciona correctamente, escribimos en el navegador: 
 
          IP + (nombre de la carpeta creada) , en este caso: 
          10.109.25.40/calculadora/ 
@@ -90,14 +90,14 @@ Ejecutamos el comando
 
     ![90-80](/ut2/a1/img/90-80.png)
 
-4. Tenemos que actualizar con ' sudo systemctl reload nginx.service ' como haciamos con la calculaora nativa.
-Despues de esto levantamos el Docker mediante el comando : 
+4. Tenemos que actualizar con ' sudo systemctl reload nginx.service ' como hacíamos con la calculadora nativa.
+Después de esto levantamos el Docker mediante el comando : 
     
          ' sudo docker compose up '
 
     Y con una vez corriendo el Docker, podemos ir a nuestro navegador y añadir la IP + ':90' ( puerto que hemos cambiado ) + calculadora.php.
 
-Quedaria:
+Quedaría:
 
        ' 10.109.25.40:90/calculadora.php ' 
 
@@ -107,4 +107,6 @@ Aquí podemos ver como quedaría con los comandos utilizados a su derecha:
 
 #### ***Conclusiones***. <a name="id5"></a>
 
-En esta parte debemos exponer las conclusiones que sacamos del desarrollo de la prácica.
+    - A mi parecer ambas opciones son útiles, ya que la configuración nativa proporciona mayor control sobre el sistema y puede ser más eficiente, pero a su vez la opción dockerizada facilita mucho la gestión y la escalabilidad.
+
+    Dependerá de la necesidad de cada proyecto el uso de una u otra.
