@@ -53,7 +53,7 @@ Una vez realizados estos pasos, podremos empezar a preparar nuestra app.
 
     - Un paso que no es 100% necesario pero puede ayudar en el proceso, es la creación de una clave SSH para conectar el servidor al repositorio Github, así tendremos un mejor acceso a los archivos, mover imagenes mas facilmente, etc.
 
-    ![CapturaRepositorioSSH](/ut2/a1/img/CapturaRepositorioSSH.png)
+    ![CapturaRepoSSH](/ut2/a1/img/CapturaRepoSSH.png)
 
     - Con los permisos necesarios modificados en la instalación previa y estos archivos creados en la carpeta, ejecutaremos en la consola el comando ' sudo nginx -t ' y comprobamos que la sintaxis del fichero de configuración está perfecta.
 
