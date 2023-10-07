@@ -36,7 +36,7 @@ En esta práctica crearemos una aplicación con PHP que funcione como calculador
 
 #### ***Material empleado***. <a name="id3"></a>
 
-Para realizar esta práctica tendremos una maquina virtual que en este caso será Debian 12 como servidor, con Nginx, PHP-FPM y Docker instalados y nos conectaremos a ella mediante SSH desde un cliente.
+Para realizar esta práctica tendremos una máquina virtual que en este caso será Debian 12 como servidor, con Nginx, PHP-FPM y Docker instalados y nos conectaremos a ella mediante SSH desde un cliente.
 
 Necesitamos , tener bien instalado y configurado los programas nombrados anteriormente, cambiar la información de los archivos para establecer los permisos oportunos para cada configuración.
 
@@ -44,13 +44,13 @@ Una vez realizados estos pasos, podremos empezar a preparar nuestra app.
 
 #### ***Desarrollo***. <a name="id4"></a>
 
-# Calculadora con Nginxx + PHP-FPM Nativo.
+# Calculadora con Nginx + PHP-FPM Nativo.
 
 1. Crearemos una carpeta llamada 'Calculadora' en la carpeta "root" de Nginx, dentro colocaremos los archivos necesarios para la ejecución de nuestra app. 
 
      ![CapturaCarpetaNginx](/ut2/a1/img/CapturaCarpetaNginx.png)
 
-2. Un paso que no es 100% necesario pero puede ayudar en el proceso, es la creación de una clave SSH para conectar el servidor al repositorio Github, así tendremos un mejor acceso a los archivos, mover imagenes mas facilmente, etc.
+2. Un paso que no es 100% necesario pero puede ayudar en el proceso, es la creación de una clave SSH para conectar el servidor al repositorio Github, así tendremos un mejor acceso a los archivos, mover imagenes más fácilmente, etc.
 
     ![CapturaRepoSSH](/ut2/a1/img/CapturaRepoSSH.png)
 
@@ -58,18 +58,20 @@ Una vez realizados estos pasos, podremos empezar a preparar nuestra app.
 
         Ejecutamos el comando ' sudo systemctl reload nginx.service ' para que todos los archivos nuevos actualicen la carpeta root de Nginx.
 
-4.  Por ultimo solo queda comprobar que la app funcióna correctamente y se ve en el navegador, escribimos : 
+4.  Por ultimo solo queda comprobar que la app funcióna correctamente, escribimos en el navegador: 
 
          IP + (nombre de la carpeta creada) , en este caso: 
          10.109.25.40/calculadora/ 
 
-          Y como podemos comprobar, funciona tanto el código PHP con su CSS y la imagen que hemos importado del repositorio.
+    Y como podemos comprobar, funciona tanto el código PHP con su CSS y la imagen que hemos importado del repositorio.
 
     ![CalculadoraNativaFlecha](/ut2/a1/img/CalculadoraNativaFlecha2.png)
 
 # Calculadora utilizando Docker.
 
-1. 
+1. Con Docker preinstalado, y todas las configuraciones listas tanto de Nginx como PHP-FPM configuradas correctamente, tendremos una carpeta app en la cual encontraremos ' default.conf ' , ' docker-compose.yml' y otra carpeta SRC donde tendremos nuestro archivos.
+
+    ![CarpetaApp](/ut2/a1/img/CarpetaAppTree.png)
 
 > ***IMPORTANTE:*** si estamos capturando una terminal no hace falta capturar todo el escritorio y es importante que se vea el nombre de usuario.
 
