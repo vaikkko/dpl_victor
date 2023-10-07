@@ -64,9 +64,9 @@ Una vez realizados estos pasos, podremos empezar a preparar nuestra app.
          IP + (nombre de la carpeta creada) , en este caso: 
          10.109.25.40/calculadora/ 
 
-          Y como podemos comprobar funciona tanto el código PHP con su CSS y la imagen que hemos importado del repositorio.
+          Y como podemos comprobar, funciona tanto el código PHP con su CSS y la imagen que hemos importado del repositorio.
 
-        ![CalculadoraNativaFlecha](/ut2/a1/img/CalculadoraNativaFlecha.png)
+        ![CalculadoraNativaFlecha](/ut2/a1/img/CalculadoraNativaFlecha2.png)
 
 > ***IMPORTANTE:*** si estamos capturando una terminal no hace falta capturar todo el escritorio y es importante que se vea el nombre de usuario.
 
