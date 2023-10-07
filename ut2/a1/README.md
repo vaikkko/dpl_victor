@@ -56,9 +56,14 @@ Una vez realizados estos pasos, podremos empezar a preparar nuestra app.
 
 3. Con los permisos necesarios modificados en la instalación previa y estos archivos creados en la carpeta, ejecutaremos en la consola el comando ' sudo nginx -t ' y comprobamos que la sintaxis del fichero de configuración está perfecta.
 
-        Ejecutamos el comando ' sudo systemctl reload nginx.service ' para que todos los archivos nuevos actualicen la carpeta root de Nginx.
+Ejecutamos el comando 
 
-4.  Por ultimo solo queda comprobar que la app funcióna correctamente, escribimos en el navegador: 
+        ' sudo systemctl reload nginx.service '
+        
+ para que todos los archivos nuevos actualicen la carpeta root de Nginx.
+
+
+4. Por ultimo solo queda comprobar que la app funcióna correctamente, escribimos en el navegador: 
 
          IP + (nombre de la carpeta creada) , en este caso: 
          10.109.25.40/calculadora/ 
@@ -73,7 +78,7 @@ Una vez realizados estos pasos, podremos empezar a preparar nuestra app.
 
     ![CarpetaApp](/ut2/a1/img/CarpetaAppTree.png)
 
-  -  Hacemos uso del Repositorio mediante la clave SSH, para traer los archivos de nuevo y mover el archivo ' .png ' 
+    - Hacemos uso del Repositorio mediante la clave SSH, para traer los archivos de nuevo y mover el archivo ' .png ' 
 
      ![pngPcture](/ut2/a1/img/pngPicture.png)
 
@@ -99,12 +104,6 @@ Quedaria:
 Aquí podemos ver como quedaría con los comandos utilizados a su derecha:
 
 ![CCDockerizado](/ut2/a1/img/CCDockerizado.png)
-
-
-
-> ***IMPORTANTE:*** si estamos capturando una terminal no hace falta capturar todo el escritorio y es importante que se vea el nombre de usuario.
-
-Si encontramos dificultades a la hora de realizar algún paso debemos explicar esas dificultades, que pasos hemos seguido para resolverla y los resultados obtenidos.
 
 #### ***Conclusiones***. <a name="id5"></a>
 
