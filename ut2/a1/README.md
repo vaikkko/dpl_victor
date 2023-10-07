@@ -66,7 +66,7 @@ Una vez realizados estos pasos, podremos empezar a preparar nuestra app.
 
           Y como podemos comprobar funciona tanto el código PHP con su CSS y la imagen que hemos importado del repositorio.
 
-        ![CapturaCalculadoraNativa](/ut2/a1/img/CapturaCalculadoraNativa.png)
+        ![CalculadoraNativaFlecha](/ut2/a1/img/CalculadoraNativaFlecha.png)
 
 > ***IMPORTANTE:*** si estamos capturando una terminal no hace falta capturar todo el escritorio y es importante que se vea el nombre de usuario.
 
