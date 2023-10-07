@@ -44,24 +44,21 @@ Una vez realizados estos pasos, podremos empezar a preparar nuestra app.
 
 #### ***Desarrollo***. <a name="id4"></a>
 
-# Nginxx + PHP-FPM Nativo.
+# Calculadora con Nginxx + PHP-FPM Nativo.
 
-1. Primer paso: 
-
-    - Crearemos una carpeta llamada 'Calculadora' en la carpeta "root" de Nginx, dentro colocaremos los archivos necesarios para la ejecución de nuestra app. 
+1. Crearemos una carpeta llamada 'Calculadora' en la carpeta "root" de Nginx, dentro colocaremos los archivos necesarios para la ejecución de nuestra app. 
 
         ![CapturaCarpetaNginx](/ut2/a1/img/CapturaCarpetaNginx.png)
 
-
-    - Un paso que no es 100% necesario pero puede ayudar en el proceso, es la creación de una clave SSH para conectar el servidor al repositorio Github, así tendremos un mejor acceso a los archivos, mover imagenes mas facilmente, etc.
+2. Un paso que no es 100% necesario pero puede ayudar en el proceso, es la creación de una clave SSH para conectar el servidor al repositorio Github, así tendremos un mejor acceso a los archivos, mover imagenes mas facilmente, etc.
 
     ![CapturaRepoSSH](/ut2/a1/img/CapturaRepoSSH.png)
 
-    - Con los permisos necesarios modificados en la instalación previa y estos archivos creados en la carpeta, ejecutaremos en la consola el comando ' sudo nginx -t ' y comprobamos que la sintaxis del fichero de configuración está perfecta.
+3. Con los permisos necesarios modificados en la instalación previa y estos archivos creados en la carpeta, ejecutaremos en la consola el comando ' sudo nginx -t ' y comprobamos que la sintaxis del fichero de configuración está perfecta.
 
         Ejecutamos el comando ' sudo systemctl reload nginx.service ' para que todos los archivos nuevos actualicen la carpeta root de Nginx.
 
-    - Por ultimo solo queda comprobar que la app funcióna correctamente y se ve en el navegador, escribimos : 
+4.  Por ultimo solo queda comprobar que la app funcióna correctamente y se ve en el navegador, escribimos : 
 
          IP + (nombre de la carpeta creada) , en este caso: 
          10.109.25.40/calculadora/ 
@@ -69,6 +66,10 @@ Una vez realizados estos pasos, podremos empezar a preparar nuestra app.
           Y como podemos comprobar, funciona tanto el código PHP con su CSS y la imagen que hemos importado del repositorio.
 
         ![CalculadoraNativaFlecha](/ut2/a1/img/CalculadoraNativaFlecha2.png)
+
+# Calculadora utilizando Docker.
+
+1. 
 
 > ***IMPORTANTE:*** si estamos capturando una terminal no hace falta capturar todo el escritorio y es importante que se vea el nombre de usuario.
 
