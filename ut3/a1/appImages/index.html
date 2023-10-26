@@ -1,30 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
-        <title>Tarea 1 - Unidad 3</title>
-    </head>
-    <body>
-        <h1>Nginx + ngx_small_light</h1>
-        <div class="container">
-            <label for="Tamaño">Tamaño</label>
-            <input type="text" name="Tamaño" id="Tamaño">
-            <br>
-            <label for="AnchoDelBorde">Ancho del borde</label>
-            <input type="text" name="AnchoDelBorde" id="AnchoDelBorde">
-            <br>
-            <label for="ColorDelBorde">Color del borde</label>
-            <input type="text" name="ColorDelBorde" id="ColorDelBorde">
-            <br>
-            <label for="Enfoque">Enfoque</label>
-            <input type="text" name="Enfoque" id="Enfoque">
-            <br>
-            <label for="Desenfoque">Desenfoque</label>
-            <input type="text" name="Desenfoque" id="Desenfoque">
-            <br>
-            <button type="submit">Generar</button>
+<html>
+  <head>
+    <title>Nginx + ngx_small_light</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div>
+      <div id="container">
+        <div id="title">
+          <h1>Nginx + ngx_small_light</h1>
         </div>
-    </body>
+      <label for="size">Tamaño:</label>
+      <input type="number" id="size" value="0" /><br /><br />
+
+      <label for="boderSize">Ancho del Borde:</label>
+      <input type="number" id="boderSize" value="0" /><br /><br />
+
+      <label for="borderColor">Color del Borde:</label>
+      <input type="color" id="borderColor" value="#000000" /><br /><br />
+
+      <label for="focus">Enfoque:</label>
+      <input type="number" id="focus" value="0" /><br /><br />
+
+      <label for="blur">Desenfoque:</label>
+      <input type="number" id="blur" value="0" /><br /><br />
+
+      <button id="button">Generar</button>
+    </div>
+    <!-- <script>
+        $(document).ready(function () {
+          $('#button').click(function () {
+            var sizeValue = $('#size').val();
+            var borderSizeValue = $('#borderSize').val();
+            var borderColorValue = $('#borderColor').val();
+            var focusValue = $('#focus').val();
+            var blurValue = $('#blur').val();
+  
+             Obtener todas las imágenes de la carpeta 'images'
+            var images = document.querySelectorAll('img');
+  
+             Iterar sobre cada imagen y aplicar los cambios
+            images.forEach(function (image) {
+              image.style.width = sizeValue + 'px';
+              image.style.border = borderSizeValue + 'px solid ' + borderColorValue;
+              
+               Implementar la lógica para el enfoque y desenfoque de las imágenes usando ngx_small_light
+              image.style.filter = "blur(" + blurValue + "px)";  Aplicar desenfoque
+              image.style.filter = "brightness(" + focusValue + "%)";  Aplicar enfoque
+            });
+          });
+        });
+      </script> -->
+  </body>
 </html>
