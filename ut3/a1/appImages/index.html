@@ -59,10 +59,14 @@
           let borderColor = document.getElementById("borderColor").value;
           let focus = document.getElementById("focus").value;
           let blur = document.getElementById("blur").value;
-          let image = document.getElementsByTagName("image").value;
+          let imageContainer = document.getElementsById("imageContainer").value;
+
+          let images = imageContainer.getElementsByTagName("image").value;
+
+          let settingsImage = `dw=${size}&dw=${borderSize}&dw=${borderColor}&dw=${focus}&dw=${blur}`;
           
-          for (  of  ){
-            
+          for (image of images  ){
+            image.src = `http://images.victor.me/image${image}.jpg/${settingsImage}`;
           }
         }
 
