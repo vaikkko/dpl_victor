@@ -57,17 +57,17 @@
           
           let size = document.getElementById("size").value;
           let borderSize = document.getElementById("borderSize").value;
-          let borderColor = document.getElementById("borderColor").value;
+          let borderColor = document.getElementById("borderColor").value.slice(1,7);
           let focus = document.getElementById("focus").value;
           let blur = document.getElementById("blur").value;
           let imageContainer = document.getElementsByClassName("imageContainer")[0];
-          let images = imageContainer.getElementsByTagName("img").value;
+          let images = imageContainer.getElementsByTagName("img");
 
           let settingsImage = `dw=${size}&bw=${borderSize}&bc=${borderColor}&focus=${focus}&blur=${blur}`;
 
           for (let image of images  ){
             let imageId = image.getAttribute("id");
-            image.src = `http://images.victor.me/img/${imageId}.jpg/${settingsImage}`;
+            image.src = `img/${imageId}.jpg?${settingsImage}`;
           }
         }
       </script>
