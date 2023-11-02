@@ -27,7 +27,7 @@
         <label for="blur">Desenfoque:</label>
         <input type="number" id="blur" value="0" />
         <br>
-        <button id="button">Generar</button>
+        <button onclick="updateImg()" id="button">Generar</button>
         <br>
         <div class="imageContainer">
           <img src="img/image01.jpg" alt="image01" id="image01">
@@ -62,10 +62,9 @@
           let imageContainer = document.getElementsByClassName("imageContainer")[0];
           let images = imageContainer.getElementsByTagName("img");
 
-          
+          let settingsImage = `dw=${size}&bw=${borderSize}&bc=${borderColor}&focus=${focus}&blur=${blur}`;
+
           for (let image of images  ){
-            
-            let settingsImage = `dw=${size}&bw=${borderSize}&bc=${borderColor}&focus=${focus}&blur=${blur}`;
             let imageId = image.getAttribute("id");
             image.src = `http://images.victor.me/img/${imageId}.jpg/${settingsImage}`;
           }
