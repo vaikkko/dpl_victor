@@ -54,13 +54,14 @@
       </div>
       <script>
         function updateImg(){
+          
           let size = document.getElementById("size").value;
           let borderSize = document.getElementById("borderSize").value;
           let borderColor = document.getElementById("borderColor").value;
           let focus = document.getElementById("focus").value;
           let blur = document.getElementById("blur").value;
-          let imageContainer = document.getElementsByClassName("imageContainer")[0];
-          let images = imageContainer.getElementsByTagName("img");
+          let imageContainer = document.getElementsByClassName("imageContainer").value;
+          let images = imageContainer.getElementsByTagName("img").value;
 
           let settingsImage = `dw=${size}&bw=${borderSize}&bc=${borderColor}&focus=${focus}&blur=${blur}`;
 
