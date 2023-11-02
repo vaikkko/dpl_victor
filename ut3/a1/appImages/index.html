@@ -13,43 +13,43 @@
           <h1>Nginx + ngx_small_light</h1>
         </div>
         <label for="size">Tamaño:</label>
-        <input type="number" id="size" value="0" /><br /><br />
-
+        <input type="number" id="size" value="0" />
+        <br>
         <label for="borderSize">Ancho del Borde:</label>
-        <input type="number" id="boderSize" value="0" /><br /><br />
-
+        <input type="number" id="borderSize" value="0" />
+        <br>
         <label for="borderColor">Color del Borde:</label>
-        <input type="color" id="borderColor" value="#000000" /><br /><br />
-
+        <input type="color" id="borderColor" value="#000000" />
+        <br>
         <label for="focus">Enfoque:</label>
-        <input type="number" id="focus" value="0" /><br /><br />
-
+        <input type="number" id="focus" value="0" />
+        <br>
         <label for="blur">Desenfoque:</label>
-        <input type="number" id="blur" value="0" /><br /><br />
-
+        <input type="number" id="blur" value="0" />
+        <br>
         <button id="button">Generar</button>
-
+        <br>
         <div class="imageContainer">
-          <img src="img/image01.jpg" alt="image01">
-          <img src="img/image02.jpg" alt="image02">
-          <img src="img/image03.jpg" alt="image03">
-          <img src="img/image04.jpg" alt="image04">
-          <img src="img/image05.jpg" alt="image05">
-          <img src="img/image06.jpg" alt="image06">
-          <img src="img/image07.jpg" alt="image07">
-          <img src="img/image08.jpg" alt="image08">
-          <img src="img/image09.jpg" alt="image09">
-          <img src="img/image10.jpg" alt="image10">
-          <img src="img/image11.jpg" alt="image11">
-          <img src="img/image12.jpg" alt="image12">
-          <img src="img/image13.jpg" alt="image13">
-          <img src="img/image14.jpg" alt="image14">
-          <img src="img/image15.jpg" alt="image15">
-          <img src="img/image16.jpg" alt="image16">
-          <img src="img/image17.jpg" alt="image17">
-          <img src="img/image18.jpg" alt="image18">
-          <img src="img/image19.jpg" alt="image19">
-          <img src="img/image20.jpg" alt="image20">
+          <img src="img/image01.jpg" alt="image01" id="image01">
+          <img src="img/image02.jpg" alt="image02" id="image02">
+          <img src="img/image03.jpg" alt="image03" id="image03">
+          <img src="img/image04.jpg" alt="image04" id="image04">
+          <img src="img/image05.jpg" alt="image05" id="image05">
+          <img src="img/image06.jpg" alt="image06" id="image06">
+          <img src="img/image07.jpg" alt="image07" id="image07">
+          <img src="img/image08.jpg" alt="image08" id="image08">
+          <img src="img/image09.jpg" alt="image09" id="image09">
+          <img src="img/image10.jpg" alt="image10" id="image10">
+          <img src="img/image11.jpg" alt="image11" id="image11">
+          <img src="img/image12.jpg" alt="image12" id="image12">
+          <img src="img/image13.jpg" alt="image13" id="image13">
+          <img src="img/image14.jpg" alt="image14" id="image14">
+          <img src="img/image15.jpg" alt="image15" id="image15">
+          <img src="img/image16.jpg" alt="image16" id="image16">
+          <img src="img/image17.jpg" alt="image17" id="image17">
+          <img src="img/image18.jpg" alt="image18" id="image18">
+          <img src="img/image19.jpg" alt="image19" id="image19">
+          <img src="img/image20.jpg" alt="image20" id="image20">
         </div>
       </div>
       <script>
@@ -59,18 +59,17 @@
           let borderColor = document.getElementById("borderColor").value;
           let focus = document.getElementById("focus").value;
           let blur = document.getElementById("blur").value;
-          let imageContainer = document.getElementsById("imageContainer").value;
+          let imageContainer = document.getElementsByClassName("imageContainer")[0];
+          let images = imageContainer.getElementsByTagName("img");
 
-          let images = imageContainer.getElementsByTagName("image").value;
-
-          let settingsImage = `dw=${size}&dw=${borderSize}&dw=${borderColor}&dw=${focus}&dw=${blur}`;
           
-          for (image of images  ){
-            image.src = `http://images.victor.me/img/${image}.jpg/${settingsImage}`;
+          for (let image of images  ){
+            
+            let settingsImage = `dw=${size}&bw=${borderSize}&bc=${borderColor}&focus=${focus}&blur=${blur}`;
+            let imageId = image.getAttribute("id");
+            image.src = `http://images.victor.me/img/${imageId}.jpg/${settingsImage}`;
           }
         }
-
       </script>
-
     </body>
   </html>
