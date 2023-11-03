@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
   <head>
+    <meta charset="UTF-8">
     <title>Nginx + ngx_small_light</title>
     <script
       src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -22,10 +23,10 @@
         <input type="color" id="borderColor" value="#000000" />
         <br>
         <label for="focus">Enfoque:</label>
-        <input type="number" id="focus" value="0" />
+        <input type="text" id="focus" value="0" />
         <br>
         <label for="blur">Desenfoque:</label>
-        <input type="number" id="blur" value="0" />
+        <input type="text" id="blur" value="0" />
         <br>
         <button onclick="updateImg()" id="button">Generar</button>
         <br>
@@ -57,19 +58,19 @@
           
           let size = document.getElementById("size").value;
           let borderSize = document.getElementById("borderSize").value;
-          let borderColor = document.getElementById("borderColor").value;
+          let borderColor = document.getElementById("borderColor").value.slice(1,7);
           let focus = document.getElementById("focus").value;
           let blur = document.getElementById("blur").value;
-          let imageContainer = document.getElementsByClassName("imageContainer").value;
-          let images = imageContainer.getElementsByTagName("img").value;
+          let imageContainer = document.getElementsByClassName("imageContainer")[0];
+          let images = imageContainer.getElementsByTagName("img");
 
-          let settingsImage = `dw=${size}&bw=${borderSize}&bc=${borderColor}&focus=${focus}&blur=${blur}`;
+          let settingsImage = `dw=${size}&bw=${borderSize}&bh=${borderSize}&bc=${borderColor}&sharpen=${focus}&blur=${blur}`;
 
           for (let image of images  ){
             let imageId = image.getAttribute("id");
-            image.src = `http://images.victor.me/img/${imageId}.jpg/${settingsImage}`;
+            image.src = `img/${imageId}.jpg?${settingsImage}`;
           }
         }
       </script>
-    </body>
-  </html>
+   </body>
+ </html>
