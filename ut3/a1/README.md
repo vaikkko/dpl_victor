@@ -84,7 +84,7 @@ Una vez realizados estos pasos, podremos empezar a preparar nuestra app.
    
 2.  Por ultimo he creado un host virtal llamado 'appImages.conf', con el 'server_name' que pide la actividad 'images.victor.me , le he señalado la carpeta root que tiene que seguir y luego he especificado la ubicación (location) de la carpeta /img , añadiendo las directiivas del módulo utilizado, en este caso small_light. 
 
-    ![appImagesConf2](/ut3/a1/img/default.appImagesConf2.png)
+    ![appImagesConf2](/ut3/a1/img/appImagesConf2.png)
 
 
 #### **_Conclusiones_**. <a name="id5"></a>
