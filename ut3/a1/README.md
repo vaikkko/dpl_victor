@@ -90,7 +90,6 @@ Una vez realizados estos pasos, podremos empezar a preparar nuestra app.
 
 - Dependiendo de los parametros que le indiques, manipula las imágenes de una manera u otra:
 <br>
-<br>
 
 
  - Página inicial:
