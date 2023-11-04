@@ -44,7 +44,7 @@ Una vez realizados estos pasos, podremos empezar a preparar nuestra app.
 
 #### **_Desarrollo_**. <a name="id4"></a>
 
-# Aplicación Web - Manejo de imagenes
+# Aplicación Web - Manejo de imágenes
 
 1. Instalamos el módulo ngx_small_light, descargando el código fuente.
 
@@ -54,19 +54,19 @@ Una vez realizados estos pasos, podremos empezar a preparar nuestra app.
 
     ![Configure](/ut3/a1/img/Configure.png)
 
-3.  Ahora tendremos que generar la librearia dinamica:
+3.  Ahora tendremos que generar la librería dinámica:
 
     
     ![MakeModules](/ut3/a1/img/MakeModules.png)
 
 
-4.  A continuación, vemos el archivo 'ngx_htp_small_light_module.so' en la carpteta 'objts', este fichero se crea del proceso que hemos realizado anteriormente, tendremos que moverlo a la carpeta 'modules' de nginx, que es la carpeta donde se cargan los módulos dinámicos de Nginx.
+4.  A continuación, vemos el archivo 'ngx_htp_small_light_module.so' en la carpeta 'objts', este fichero se crea del proceso que hemos realizado anteriormente, tendremos que moverlo a la carpeta 'modules' de nginx, que es la carpeta donde se cargan los módulos dinámicos de Nginx.
 
     ![objs](/ut3/a1/img/objs.png)
 
     ![copy.so](/ut3/a1/img/copy.so.png)
 
-5. Para terminar con la configuración, modificaremos el archivo 'nginx.conf' y le añadiremos la linea :
+5. Para terminar con la configuración, modificaremos el archivo 'nginx.conf' y le añadiremos la línea :
 
         'load_module /etc/nginx/modules/ngx_http_small_light_module.so;'
     para que el módulo se cargue como corresponde.
@@ -77,16 +77,16 @@ Una vez realizados estos pasos, podremos empezar a preparar nuestra app.
          
 # Creación y configuración del virtual host:
 
-1.  Primero he creado una carpeta con los archivos e imagenes necesarias para que la apliciación funcione correctametne y la he añadido a la carpeta "root" de Nginx. 
+1.  Primero he creado una carpeta con los archivos e imágenes necesarias para que la apliciación funcione correctamente y la he añadido a la carpeta "root" de Nginx. 
 
     ![appImages](/ut3/a1/img/appImages.png)
 
    
-2.  Por ultimo he creado un host virtal llamado 'appImages.conf', con el 'server_name' que pide la actividad 'images.victor.me , le he señalado la carpeta root que tiene que seguir y luego he especificado la ubicación (location) de la carpeta /img , añadiendo las directiivas del módulo utilizado, en este caso small_light. 
+2.  Por ultimo he creado un host virtual llamado 'appImages.conf', con el 'server_name' que pide la actividad 'images.victor.me , le he señalado la carpeta root que tiene que seguir y luego he especificado la ubicación (location) de la carpeta /img , añadiendo las directivas del módulo utilizado, en este caso small_light. 
 
     ![appImagesConf2](/ut3/a1/img/appImagesConf2.png)
 
 
 #### **_Conclusiones_**. <a name="id5"></a>
 
-- La utilización de host virtuales y modulos puede ser realmente util para que el rendmiento y la experiencia de uso sea más fluida, ampliando las funcionalidades del serviidor de una manera más efectiva, siendo esto importante a la hora de desarrollar una web.
+- La utilización de host virtuales y módulos puede ser realmente útil para que el rendimiento y la experiencia de uso sea más fluida, ampliando las funcionalidades del servidor de una manera más efectiva, siendo esto importante a la hora de desarrollar una web.
