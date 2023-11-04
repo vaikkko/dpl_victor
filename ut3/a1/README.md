@@ -90,15 +90,15 @@ Una vez realizados estos pasos, podremos empezar a preparar nuestra app.
 
 - Dependiendo de los parametros que le indiques, manipula las imágenes de una manera u otra:
 
-    - Página inicial:
+ - Página inicial:
     ![web0](/ut3/a1/img/web0.png)
 
 
-    - Página con datos1:
+ - Página con datos1:
     ![web1](/ut3/a1/img/web1.png)
 
 
-    - Página con datos2:
+ - Página con datos2:
     ![web1.1](/ut3/a1/img/web1.1.png)
 
 
