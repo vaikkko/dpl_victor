@@ -44,71 +44,49 @@ Una vez realizados estos pasos, podremos empezar a preparar nuestra app.
 
 #### **_Desarrollo_**. <a name="id4"></a>
 
-# Calculadora con Nginx + PHP-FPM Nativo.
+# Aplicación Web - Manejo de imagenes
 
-1.  Crearemos una carpeta llamada 'Calculadora' en la carpeta "root" de Nginx, dentro colocaremos los archivos necesarios para la ejecución de nuestra app.
+1. Instalamos el módulo ngx_small_light, descargando el código fuente.
 
-    ![CapturaCarpetaNginx](/ut2/a1/img/CapturaCarpetaNginx.png)
+    ![InstalciónSLight](/ut3/a1/img/InstalciónSLight.png)
 
-2.  Un paso que no es 100% necesario pero puede ayudar en el proceso, es la creación de una clave SSH para conectar el servidor al repositorio Github, así tendremos un mejor acceso a los archivos, mover imágenes más fácilmente, etc.
+2.  Una vez instalado necesitaremos configurar la compilación. 
 
-    ![CapturaRepoSSH](/ut2/a1/img/CapturaRepoSSH.png)
+    ![Configure](/ut3/a1/img/Configure.png)
 
-3.  Con los permisos necesarios modificados en la instalación previa y estos archivos creados en la carpeta, ejecutaremos en la consola el comando ' sudo nginx -t ' y comprobamos que la sintaxis del fichero de configuración está perfecta.
+3.  Ahora tendremos que generar la librearia dinamica:
 
-    Ejecutamos el comando
+    
+    ![MakeModules](/ut3/a1/img/MakeModules.png)
 
-             ' sudo systemctl reload nginx.service '
 
-    para que todos los archivos nuevos actualicen la carpeta root de Nginx.
+4.  A continuación, vemos el archivo 'ngx_htp_small_light_module.so' en la carpteta 'objts', este fichero se crea del proceso que hemos realizado anteriormente, tendremos que moverlo a la carpeta 'modules' de nginx, que es la carpeta donde se cargan los módulos dinámicos de Nginx.
 
-4.  Por último solo queda comprobar que la app funciona correctamente, escribimos en el navegador:
+    ![objs](/ut3/a1/img/objs.png)
 
-         IP + (nombre de la carpeta creada) , en este caso:
-         10.109.25.40/calculadora/
+    ![copy.so](/ut3/a1/img/copy.so.png)
 
-    Y como podemos comprobar, funciona tanto el código PHP con su CSS y la imagen que hemos importado del repositorio.
+5. Para terminar con la configuración, modificaremos el archivo 'nginx.conf' y le añadiremos la linea :
 
-    ![CalculadoraNativaFlecha](/ut2/a1/img/CalculadoraNativaFlecha2.png)
+        'load_module /etc/nginx/modules/ngx_http_small_light_module.so;'
+    para que el módulo se cargue como corresponde.
 
-# Calculadora utilizando Docker.
+    ![nginxConf](/ut3/a1/img/nginxConf.png)
 
-1.  Con Docker preinstalado, y todas las configuraciones listas tanto de Nginx como PHP-FPM configuradas correctamente, tendremos una carpeta app en la cual encontraremos ' default.conf ' , ' docker-compose.yml ' y otra carpeta SRC donde tendremos nuestro archivos.
 
-    ![CarpetaApp](/ut2/a1/img/CarpetaAppTree.png)
+         
+# Creación y configuración del virtual host:
 
-    - Hacemos uso del Repositorio mediante la clave SSH, para traer los archivos de nuevo y mover el archivo ' .png '
+1.  Primero he creado una carpeta con los archivos e imagenes necesarias para que la apliciación funcione correctametne y la he añadido a la carpeta "root" de Nginx. 
 
-    ![pngPcture](/ut2/a1/img/pngPicture.png)
+    ![appImages](/ut3/a1/img/appImages.png)
 
-2.  A continuación cambiaremos el interior de default.conf para que contenga el archivo ' calculadora.php ' como podemos observar en la siguiente captura de pantalla.
+   
+2.  Por ultimo he creado un host virtal llamado 'appImages.conf', con el 'server_name' que pide la actividad 'images.victor.me , le he señalado la carpeta root que tiene que seguir y luego he especificado la ubicación (location) de la carpeta /img , añadiendo las directiivas del módulo utilizado, en este caso small_light. 
 
-    ![Default.confFlecha](/ut2/a1/img/default.confFlecha.png)
+    ![appImagesConf2](/ut3/a1/img/default.appImagesConf2.png)
 
-3.  Cambiamos el puerto 80 a 90 en el ' docker-cmopose.yml ' ya que en clase el puerto 80 estaba en uso.
-
-    ![90-80](/ut2/a1/img/90-80.png)
-
-4.  Tenemos que actualizar como hacíamos con la calculadora nativa mediante:
-
-        ' sudo systemctl reload nginx.service '
-
-    Después de esto levantamos el Docker mediante el comando :
-
-         ' sudo docker compose up '
-
-    Y con una vez corriendo el Docker, podemos ir a nuestro navegador y añadir la IP + ':90' ( puerto que hemos cambiado ) + calculadora.php.
-
-    Quedaría:
-
-    ' 10.109.25.40:90/calculadora.php '
-
-    Aquí podemos ver como quedaría con los comandos utilizados a su derecha:
-
-![CCDockerizado](/ut2/a1/img/CCDockerizado.png)
 
 #### **_Conclusiones_**. <a name="id5"></a>
 
-- A mi parecer ambas opciones son útiles, ya que la configuración nativa proporciona mayor control sobre el sistema y puede ser más eficiente, pero a su vez la opción dockerizada facilita mucho la gestión y la escalabilidad.
-
-  Dependerá de la necesidad de cada proyecto el uso de una u otra.
+- La utilización de host virtuales y modulos puede ser realmente util para que el rendmiento y la experiencia de uso sea más fluida, ampliando las funcionalidades del serviidor de una manera más efectiva, siendo esto importante a la hora de desarrollar una web.
