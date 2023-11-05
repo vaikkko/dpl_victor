@@ -90,7 +90,6 @@ Una vez realizados estos pasos, podremos empezar a preparar nuestra app.
 
 - Dependiendo de los parametros que le indiques, manipula las imágenes de una manera u otra:
 <br>
-<br>
 
 
  - Página inicial:
@@ -112,3 +111,5 @@ Una vez realizados estos pasos, podremos empezar a preparar nuestra app.
 #### **_Conclusiones_**. <a name="id5"></a>
 
 - La utilización de host virtuales y módulos puede ser realmente útil para que el rendimiento y la experiencia de uso sea más fluida, ampliando las funcionalidades del servidor de una manera más efectiva, siendo esto importante a la hora de desarrollar una web.
+
+<br>
