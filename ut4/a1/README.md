@@ -1,7 +1,6 @@
 <center>
 
 # UT4-A1 Administración de servidores de aplicaciones
-## ( PostgreSQL )
 </center>
 
 ***Víctor Manuel Martínez López:***
