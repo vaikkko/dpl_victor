@@ -1,7 +1,10 @@
 <center>
 
 # UT4-A1 Administración de servidores de aplicaciones
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7aba798c7ad84484382f214294981f6e78a8ef83
 </center>
 
 ***Víctor Manuel Martínez López:***
