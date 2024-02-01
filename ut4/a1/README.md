@@ -1,10 +1,7 @@
 <center>
 
 # UT4-A1 Administración de servidores de aplicaciones
-<<<<<<< HEAD
 
-=======
->>>>>>> 7aba798c7ad84484382f214294981f6e78a8ef83
 </center>
 
 ***Víctor Manuel Martínez López:***
@@ -144,6 +141,129 @@ Despliegue
                 11 | Helsinki   | f
                 (11 filas)
    
+
+4. PgAdmin:
+
+ - Creamos las carpetas de trabajo con los permisos adecuados:
+
+        sdelquin@lemon:~$ sudo mkdir /var/lib/pgadmin
+        sdelquin@lemon:~$ sudo mkdir /var/log/pgadmin
+        sdelquin@lemon:~$ sudo chown $USER /var/lib/pgadmin
+        sdelquin@lemon:~$ sudo chown $USER /var/log/pgadmin
+
+ - Creamos un entorno virtual de Python (lo activamos) e instalamos el paquete pgadmin4:
+
+        sdelquin@lemon:~$ cd $HOME
+        sdelquin@lemon:~$ python -m venv pgadmin4
+        sdelquin@lemon:~$ source pgadmin4/bin/activate
+
+        (pgadmin4) sdelquin@lemon:~$ pip install pgadmin4
+        ...
+        ...
+        ...
+
+ - Ahora lanzamos el script de configuración en el que tendremos que dar credenciales para una cuenta "master":
+
+        pgadmin4
+ 
+ - Servidor en producción:
+  - Para poder lanzar el servidor pgAdmin en modo producción y con garantías, necesitaremos hacer uso de un procesador de peticiones WSGI denominado gunicorn.
+  Podemos instalarlo como un paquete Python adicional (dentro del entorno virtual):
+
+        pip install gunicorn
+
+ - Ahora ya estamos en disposición de levantar el servidor pgAdmin utilizando gunicorn:
+
+         gunicorn \
+        --chdir pgadmin4/lib/python3.11/site-packages/pgadmin4 \
+        --bind unix:/tmp/pgadmin4.sock pgAdmin4:app
+
+## Virtualhost en Nginx
+- Lo que restaría es crear virtual host en Nginx que sirva la aplicación vía web:
+
+         sudo nano /etc/nginx/conf.d/pgadmin.conf
+
+ - Contenido:
+
+        server {
+        server_name pgadmin.arkania.es;
+
+        location / {
+                proxy_pass http://unix:/tmp/pgadmin4.sock;  # socket UNIX
+        }
+        }
+
+## Demonizando el servicio
+
+- Obviamente no es operativo tener que mantener el proceso gunicorn funcionando en una terminal, por lo que vamos a crear un servicio del sistema.
+
+        sudo nano /etc/systemd/system/pgadmin.service
+
+- Contenido:
+
+        [Unit]
+        Description=pgAdmin
+
+        [Service]
+        User=sdelquin
+        ExecStart=/bin/bash -c '\
+        source /home/sdelquin/pgadmin4/bin/activate && \
+        gunicorn --chdir /home/sdelquin/pgadmin4/lib/python3.11/site-packages/pgadmin4 \
+        --bind unix:/tmp/pgadmin4.sock \
+        pgAdmin4:app'
+        Restart=always
+
+        [Install]
+        WantedBy=multi-user.target
+
+- A continuación recargamos los servicios para luego levantar pgAdmin y  habilitarlo en caso de reinicio del sistema:
+
+        sdelquin@lemon:~$ sudo systemctl daemon-reload
+        sdelquin@lemon:~$ sudo systemctl start pgadmin
+        sdelquin@lemon:~$ sudo systemctl enable pgadmin
+
+- Por último comprobamos que el servicio está funcionando correctamente:
+
+        sudo systemctl is-active pgadmin
+        active
+
+## Registrando un servidor
+
+- Cuando conectamos a pgAdmin tenemos la posibilidad de conectar distintos servidores de bases de datos. Procederemos a registrar la base de datos de TravelRoad.
+
+  - Pulsamos con botón derecho y vamos a Register → Server:
+
+## Acceso externo
+  -  Por defecto PostgreSQL sólo permite conexiones desde localhost. Si queremos acceder desde fuera, tendremos que modificar algunas configuraciones.
+En primer lugar tendremos que "escuchar" en cualquier IP, no únicamente en localhost (valor por defecto):
+
+        sudo nano /etc/postgresql/15/main/postgresql.conf
+- Añadir lo siguiente en la línea 64:
+
+        listen_addresses = '*'
+
+- En segundo lugar tendremos que otorgar permisos. PostgreSQL tiene la capacidad de controlar accesos por:
+
+  - Base de datos.
+  - Usuario.
+  - IP de origen.
+
+- En este ejemplo vamos a permitir el acceso del usuario travelroad_user a la base de datos travelroad desde cualquier IP de origen:
+
+         sudo nano /etc/postgresql/15/main/pg_hba.conf
+
+- Añadir al final del fichero:
+
+        host travelroad travelroad_user 0.0.0.0/0 md5
+
+- Una vez hechos estos cambios, debemos reiniciar el servicio PostgreSQL para que los cambios surtan efecto:  
+
+         sudo systemctl restart postgresql
+
+Ahora ya podemos acceder a nuestro servidor PostgreSQL desde cualquier máquina utilizando el nombre de dominio/IP del servidor y las credenciales de acceso.
+
+### Instalación del Framework Laravel
+
     ![CalculadoraNativaFlecha](/ut2/a1/img/CalculadoraNativaFlecha2.png)
 
 # Calculadora utilizando Docker.
