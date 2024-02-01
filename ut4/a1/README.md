@@ -20,7 +20,7 @@
 
 El objetivo de esta tarea es preparar la infraestructura de la capa de datos para el resto de la unidad. En este sentido se va a trabajar con PostgreSQL.
 
-#### ***PostgreSQL***. <a name="id2"></a>
+#### ***PostgreSQL*** <a name="id2"></a>
 
 1.  Instale PostgreSQL tanto en la máquina local (desarrollo) como en la máquina remota (producción) utilizando credenciales distintas.
 2.  Cargue los datos de prueba para la aplicación TravelRoad tanto en desarrollo como en producción.
@@ -186,11 +186,11 @@ Despliegue
  - Contenido:
 
         server {
-        server_name pgadmin.arkania.es;
+                server_name pgadmin.arkania.es;
 
-        location / {
-                proxy_pass http://unix:/tmp/pgadmin4.sock;  # socket UNIX
-        }
+                location / {
+                        proxy_pass http://unix:/tmp/pgadmin4.sock;  # socket UNIX
+                }
         }
 
 ## Demonizando el servicio
@@ -264,6 +264,9 @@ Ahora ya podemos acceder a nuestro servidor PostgreSQL desde cualquier máquina 
 
 ### Instalación del Framework Laravel
 
+![Laravel](/ut4/a1/img/Laravel.jpg)
+
+
 1. Instalación
 
 - Composer
@@ -285,7 +288,7 @@ Ahora ya podemos crear la estructura de nuestra aplicación Laravel.
 
 - Por defecto se ha creado un fichero de configuración .env durante el andamiaje. Abrimos este fichero y modificamos ciertos valores para especificar credenciales de acceso:
 
-        ~/travelroad_laravel$ vi .env
+        pc25-dpl@a109pc25dpl:~/travelroad_laravel$ nano .env
 
 Cambios:
 
@@ -305,8 +308,8 @@ Cambios:
 
 - Cambiamos los permisos a los ficheros correspondientes.
 
-        pc25-dpl@victor:~/travelroad$ sudo chgrp -R nginx storage bootstrap/cache
-        pc25-dpl@victor:~/travelroad$ sudo chmod -R ug+rwx storage bootstrap/cache
+        pc25-dpl@a109pc25dpl:~/travelroad$ sudo chgrp -R nginx storage bootstrap/cache
+        pc25-dpl@a109pc25dpl:~/travelroad$ sudo chmod -R ug+rwx storage bootstrap/cache
 
 - La configuración del virtual host Nginx para nuestra aplicación Laravel la vamos a hacer en un fichero específico:
 
@@ -315,7 +318,7 @@ Cambios:
 Contenido:
 
         server {
-                server_name travelroad.local;
+                server_name php.travelroad.local;
                 root /usr/share/nginx/travelroad_laravel;
 
                 index index.html index.htm index.php;
@@ -335,7 +338,7 @@ Contenido:
 
 - Lo primero es cambiar el código de la ruta:
 
-        pc25-dpl@victor:~/travelroad$ vi routes/web.php
+        pc25-dpl@a109pc25dpl:~/travelroad$ vi routes/web.php
 Contenido:
 
         <?php
@@ -352,7 +355,7 @@ Contenido:
 
 - Ahora cambiar la plantilla:
 
-        pc25-dpl@victor:~/travelroad$ vi resources/views/travelroad.blade.php
+        pc25-dpl@a109pc25dpl:~/travelroad$ vi resources/views/travelroad.blade.php
 Contenido:
 
         <html>
@@ -380,15 +383,26 @@ Contenido:
 
 - Con esto tendríamos la plicación funcionando en local.
 
+Resultado:
+
+![LaravelLocal](/ut4/a1/img/LaravelLocal.png)
+
+
 ### Producción
 
 1. Clonamos el repositorio de la maquina local y procedemos  ejecutar el siguiente comando, que tendrá todas las dependencias del proyecto.
 
-        pc25-dpl@victor:~/travelroad$ composer install
+        pc25-dpl@a109pc25dpl:~/travelroad$ composer install
 
 2. Creamos otro virtual host con el server_name que nos pide la actividad:
 
+![travelroad_laravelConf](/ut4/a1/img/travelroad_laravelConf.png)
+
+
 3. Le añadimos el certificado de encriptación mediante Certbo, y lo modificamos un poco para que aunque accedamos al server nam sin " www " nos redirija a la correcta.
+
+![CertbotLaravel](/ut4/a1/img/CertbotLaravel.png)
 
 4. Para finalizar, creamos un script para que al ejecutarlo todos los cambios que hagamos en local, se suban al repositorio y se haga un pull  a la maquina de producción.
 
+![deployLaravel](/ut4/a1/img/deployLaravel.png)
