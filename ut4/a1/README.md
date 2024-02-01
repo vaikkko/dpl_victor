@@ -392,4 +392,3 @@ Contenido:
 
 4. Para finalizar, creamos un script para que al ejecutarlo todos los cambios que hagamos en local, se suban al repositorio y se haga un pull  a la maquina de producción.
 
-# Calculadora utilizando Docker.
