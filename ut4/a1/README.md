@@ -399,7 +399,7 @@ Resultado:
 ![travelroad_laravelConf](/ut4/a1/img/travelroad_laravelConf.png)
 
 
-3. Le añadimos el certificado de encriptación mediante Certbo, y lo modificamos un poco para que aunque accedamos al server nam sin " www " nos redirija a la correcta.
+3. Le añadimos el certificado de encriptación mediante Certbo, y lo modificamos para que nos redirija a la correcta.
 
 ![CertbotLaravel](/ut4/a1/img/CertbotLaravel.png)
 
