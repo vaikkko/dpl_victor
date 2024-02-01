@@ -406,3 +406,8 @@ Resultado:
 4. Para finalizar, creamos un script para que al ejecutarlo todos los cambios que hagamos en local, se suban al repositorio y se haga un pull  a la maquina de producción.
 
 ![deployLaravel](/ut4/a1/img/deployLaravel.png)
+
+## Resultado en Producción
+
+![MyTravelBucketList_Laravel](/ut4/a1/img/MyTravelBucketList_Laravel.png)
+
