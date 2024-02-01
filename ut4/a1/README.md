@@ -264,6 +264,132 @@ Ahora ya podemos acceder a nuestro servidor PostgreSQL desde cualquier máquina 
 
 ### Instalación del Framework Laravel
 
-    ![CalculadoraNativaFlecha](/ut2/a1/img/CalculadoraNativaFlecha2.png)
+1. Instalación
+
+- Composer
+Lo primero que necesitamos es un gestor de dependencias para PHP. Vamos a instalar Composer:
+
+        curl -fsSL https://raw.githubusercontent.com/composer/getcomposer.org/main/web/installer \
+        | php -- --quiet | sudo mv composer.phar /usr/local/bin/composer
+
+- Paquetes de soporte
+
+        sudo apt install -y php8.2-mbstring php8.2-xml \
+        php8.2-bcmath php8.2-curl php8.2-pgsql
+
+- Aplicación
+
+Ahora ya podemos crear la estructura de nuestra aplicación Laravel.
+
+        composer create-project laravel/laravel travelroad_laravel
+
+- Por defecto se ha creado un fichero de configuración .env durante el andamiaje. Abrimos este fichero y modificamos ciertos valores para especificar credenciales de acceso:
+
+        ~/travelroad_laravel$ vi .env
+
+Cambios:
+
+        ...
+        APP_NAME=TravelRoad
+        APP_ENV=development
+        ...
+        DB_CONNECTION=pgsql
+        DB_HOST=127.0.0.1
+        DB_PORT=5432
+        DB_DATABASE=travelroad
+        DB_USERNAME=travelroad_user
+        DB_PASSWORD=dpl0000
+        ...
+
+2. Configuración Nginx
+
+- Cambiamos los permisos a los ficheros correspondientes.
+
+        pc25-dpl@victor:~/travelroad$ sudo chgrp -R nginx storage bootstrap/cache
+        pc25-dpl@victor:~/travelroad$ sudo chmod -R ug+rwx storage bootstrap/cache
+
+- La configuración del virtual host Nginx para nuestra aplicación Laravel la vamos a hacer en un fichero específico:
+
+        sudo nano /etc/nginx/conf.d/travelroad.conf
+
+Contenido:
+
+        server {
+                server_name travelroad.local;
+                root /usr/share/nginx/travelroad_laravel;
+
+                index index.html index.htm index.php;
+
+                location / {
+                        try_files $uri $uri/ /index.php?$query_string;
+                }
+
+                location ~ \.php$ {
+                        fastcgi_pass unix:/var/run/php/php8.2-fpm.sock;
+                        fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
+                        include fastcgi_params;
+                }
+        }
+
+## Ahora modificaremos la aplicación:
+
+- Lo primero es cambiar el código de la ruta:
+
+        pc25-dpl@victor:~/travelroad$ vi routes/web.php
+Contenido:
+
+        <?php
+
+        // https://laravel.com/api/6.x/Illuminate/Support/Facades/DB.html
+        use Illuminate\Support\Facades\DB;
+
+        Route::get('/', function () {
+        $wished = DB::select('select * from places where visited = false');
+        $visited = DB::select('select * from places where visited = true');
+
+        return view('travelroad', ['wished' => $wished, 'visited' => $visited]);
+        });
+
+- Ahora cambiar la plantilla:
+
+        pc25-dpl@victor:~/travelroad$ vi resources/views/travelroad.blade.php
+Contenido:
+
+        <html>
+        <head>
+        <title>Travel List</title>
+        </head>
+
+        <body>
+        <h1>My Travel Bucket List</h1>
+        <h2>Places I'd Like to Visit</h2>
+        <ul>
+        @foreach ($wished as $place)
+        <li>{{ $place->name }}</li>
+        @endforeach
+        </ul>
+
+        <h2>Places I've Already Been To</h2>
+        <ul>
+        @foreach ($visited as $place)
+        <li>{{ $place->name }}</li>
+        @endforeach
+        </ul>
+        </body>
+        </html>
+
+- Con esto tendríamos la plicación funcionando en local.
+
+### Producción
+
+1. Clonamos el repositorio de la maquina local y procedemos  ejecutar el siguiente comando, que tendrá todas las dependencias del proyecto.
+
+        pc25-dpl@victor:~/travelroad$ composer install
+
+2. Creamos otro virtual host con el server_name que nos pide la actividad:
+
+3. Le añadimos el certificado de encriptación mediante Certbo, y lo modificamos un poco para que aunque accedamos al server nam sin " www " nos redirija a la correcta.
+
+4. Para finalizar, creamos un script para que al ejecutarlo todos los cambios que hagamos en local, se suban al repositorio y se haga un pull  a la maquina de producción.
 
 # Calculadora utilizando Docker.
