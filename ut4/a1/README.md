@@ -146,18 +146,18 @@ Despliegue
 
  - Creamos las carpetas de trabajo con los permisos adecuados:
 
-        sdelquin@lemon:~$ sudo mkdir /var/lib/pgadmin
-        sdelquin@lemon:~$ sudo mkdir /var/log/pgadmin
-        sdelquin@lemon:~$ sudo chown $USER /var/lib/pgadmin
-        sdelquin@lemon:~$ sudo chown $USER /var/log/pgadmin
+        pc25-dpl@a109pc25dpl:~$ sudo mkdir /var/lib/pgadmin
+        pc25-dpl@a109pc25dpl:~$ sudo mkdir /var/log/pgadmin
+        pc25-dpl@a109pc25dpl:~$ sudo chown $USER /var/lib/pgadmin
+        pc25-dpl@a109pc25dpl:~$ sudo chown $USER /var/log/pgadmin
 
  - Creamos un entorno virtual de Python (lo activamos) e instalamos el paquete pgadmin4:
 
-        sdelquin@lemon:~$ cd $HOME
-        sdelquin@lemon:~$ python -m venv pgadmin4
-        sdelquin@lemon:~$ source pgadmin4/bin/activate
+        pc25-dpl@a109pc25dpl:~$ cd $HOME
+        pc25-dpl@a109pc25dpl:~$ python -m venv pgadmin4
+        pc25-dpl@a109pc25dpl:~$ source pgadmin4/bin/activate
 
-        (pgadmin4) sdelquin@lemon:~$ pip install pgadmin4
+        (pgadmin4)pc25-dpl@a109pc25dpl:~$ pip install pgadmin4
         ...
         ...
         ...
@@ -186,12 +186,13 @@ Despliegue
  - Contenido:
 
         server {
-                server_name pgadmin.arkania.es;
+                server_name pgadmin.local;
 
                 location / {
                         proxy_pass http://unix:/tmp/pgadmin4.sock;  # socket UNIX
                 }
         }
+
 
 ## Demonizando el servicio
 
@@ -205,10 +206,10 @@ Despliegue
         Description=pgAdmin
 
         [Service]
-        User=sdelquin
+        User=pc25-dpl
         ExecStart=/bin/bash -c '\
-        source /home/sdelquin/pgadmin4/bin/activate && \
-        gunicorn --chdir /home/sdelquin/pgadmin4/lib/python3.11/site-packages/pgadmin4 \
+        source /home/pc25-dpl/pgadmin4/bin/activate && \
+        gunicorn --chdir /home/pc25-dpl/pgadmin4/lib/python3.11/site-packages/pgadmin4 \
         --bind unix:/tmp/pgadmin4.sock \
         pgAdmin4:app'
         Restart=always
@@ -218,9 +219,9 @@ Despliegue
 
 - A continuación recargamos los servicios para luego levantar pgAdmin y  habilitarlo en caso de reinicio del sistema:
 
-        sdelquin@lemon:~$ sudo systemctl daemon-reload
-        sdelquin@lemon:~$ sudo systemctl start pgadmin
-        sdelquin@lemon:~$ sudo systemctl enable pgadmin
+        pc25-dpl@a109pc25dpl:~$ sudo systemctl daemon-reload
+        pc25-dpl@a109pc25dpl:~$ sudo systemctl start pgadmin
+        pc25-dpl@a109pc25dpl:~$ sudo systemctl enable pgadmin
 
 - Por último comprobamos que el servicio está funcionando correctamente:
 
@@ -250,7 +251,7 @@ En primer lugar tendremos que "escuchar" en cualquier IP, no únicamente en loca
 
 - En este ejemplo vamos a permitir el acceso del usuario travelroad_user a la base de datos travelroad desde cualquier IP de origen:
 
-         sudo nano /etc/postgresql/15/main/pg_hba.conf
+        sudo nano /etc/postgresql/15/main/pg_hba.conf
 
 - Añadir al final del fichero:
 
@@ -258,7 +259,7 @@ En primer lugar tendremos que "escuchar" en cualquier IP, no únicamente en loca
 
 - Una vez hechos estos cambios, debemos reiniciar el servicio PostgreSQL para que los cambios surtan efecto:  
 
-         sudo systemctl restart postgresql
+        sudo systemctl restart postgresql
 
 Ahora ya podemos acceder a nuestro servidor PostgreSQL desde cualquier máquina utilizando el nombre de dominio/IP del servidor y las credenciales de acceso.
 
@@ -308,8 +309,8 @@ Cambios:
 
 - Cambiamos los permisos a los ficheros correspondientes.
 
-        pc25-dpl@a109pc25dpl:~/travelroad$ sudo chgrp -R nginx storage bootstrap/cache
-        pc25-dpl@a109pc25dpl:~/travelroad$ sudo chmod -R ug+rwx storage bootstrap/cache
+        pc25-dpl@a109pc25dpl:~/travelroad_laravel$ sudo chgrp -R nginx storage bootstrap/cache
+        pc25-dpl@a109pc25dpl:~/travelroad_laravel$ sudo chmod -R ug+rwx storage bootstrap/cache
 
 - La configuración del virtual host Nginx para nuestra aplicación Laravel la vamos a hacer en un fichero específico:
 
@@ -338,7 +339,7 @@ Contenido:
 
 - Lo primero es cambiar el código de la ruta:
 
-        pc25-dpl@a109pc25dpl:~/travelroad$ vi routes/web.php
+        pc25-dpl@a109pc25dpl:~/travelroad_laravel$ nano routes/web.php
 Contenido:
 
         <?php
@@ -355,7 +356,7 @@ Contenido:
 
 - Ahora cambiar la plantilla:
 
-        pc25-dpl@a109pc25dpl:~/travelroad$ vi resources/views/travelroad.blade.php
+        pc25-dpl@a109pc25dpl:~/travelroad_laravel$ nano resources/views/travelroad.blade.php
 Contenido:
 
         <html>
@@ -392,7 +393,7 @@ Resultado:
 
 1. Clonamos el repositorio de la maquina local y procedemos  ejecutar el siguiente comando, que tendrá todas las dependencias del proyecto.
 
-        pc25-dpl@a109pc25dpl:~/travelroad$ composer install
+        pc25-dpl@a109pc25dpl:~/travelroad_laravel$ composer install
 
 2. Creamos otro virtual host con el server_name que nos pide la actividad:
 
