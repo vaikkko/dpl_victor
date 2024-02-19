@@ -1,8 +1,10 @@
+![Spring](/ut4/a2/img/SpringLogo.png.png)
+
 ### Instalación del Framework Spring
 
 Spring es un framework de código abierto que da soporte para el desarrollo de aplicaciones y páginas webs basadas en Java. Se trata de uno de los entornos más populares y ayuda a crear aplicaciones con un alto rendimiento empleando objetos de Java sencillos.
 
-![ExpresLogo](/ut4/a2/img/vhostArkaniaExpress.png)
+![Spring](/ut4/a2/img/vhostArkaniaExpress.png)
 
 
 ## Instalación
@@ -274,17 +276,12 @@ Contenido:
         </head>
         <body>
             <h1>My Travel Bucket List</h1>
-            <h2>Places I'd Like to Visit</h2>
-            <ul th:each="place : ${wished}">
-            <li th:text="${place.name}"></li>
-            </ul>
-
-            <h2>Places I've Already Been To</h2>
-            <ul th:each="place : ${visited}">
-            <li th:text="${place.name}"></li>
-            </ul>
+            <p><a th:href="@{/wished}">Places I'd like to visit</a></p>
+            <p><a th:href="@{/visited}">Places I've already been to</a></p>
+            <p>Powered by Spring</p>
         </body>
         </html>
+
 
 
 ## Dependencias:
