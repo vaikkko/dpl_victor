@@ -29,8 +29,19 @@ Framework	URL de despliegue
 - Ruby on Rails	https://rails.nombrealumno.arkania.es
 - Django	https://django.travelroad.nombrealumno.arkania.es
 
-<center>
+
 <br>
+
+### Trabajo previo
+
+Para esta práctica necesitaremos la practica 1, la cual hemos preparado el gestor de base de datos ( PostgreSQL ), con la lista de los paises en dicha base de datos cargados. PgAdmin para la gestión de la misma.
+
+Podemos seguir esta guia para asegurarnos que todo funciona bien:
+
+        https://github.com/vaikkko/dpl-Doc/tree/main/ut4
+
+Despues de relizar todos los pasos previos, empezamos con cada uno de los Frameworks.
+
 
 #### ***Repositorios individuaeles***. <a name="id2"></a>
 
