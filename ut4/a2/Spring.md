@@ -1,4 +1,4 @@
-![Spring](/ut4/a2/img/SpringLogo.png.png)
+![Spring](/ut4/a2/img/SpringLogo.png)
 
 ### Instalación del Framework Spring
 
