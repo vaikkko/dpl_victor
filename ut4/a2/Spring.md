@@ -4,8 +4,6 @@
 
 Spring es un framework de código abierto que da soporte para el desarrollo de aplicaciones y páginas webs basadas en Java. Se trata de uno de los entornos más populares y ayuda a crear aplicaciones con un alto rendimiento empleando objetos de Java sencillos.
 
-![Spring](/ut4/a2/img/vhostArkaniaExpress.png)
-
 
 ## Instalación
 
